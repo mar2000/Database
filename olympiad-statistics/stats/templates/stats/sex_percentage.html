@@ -1,0 +1,15 @@
+{% include "stats/navbar.html" %}
+
+    {% if female %}
+
+        Women percentage in {{ year }} Olympics: {{ female }}%  <br><br>
+
+        Men percentage in {{ year }} Olympics: {{ male }}%
+
+    {% else %}
+        
+        {% include "stats/error_year.html" %}
+
+    {% endif %}
+    
+{% include "stats/footer.html" %}

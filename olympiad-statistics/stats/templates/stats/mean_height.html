@@ -1,0 +1,17 @@
+{% include "stats/navbar.html" %}
+    
+    {% if female_mean %}
+
+        The average female height in {{ year}} Olympics: {{ female_mean.height__avg }}cm
+
+        <br><br>
+        The average male height in {{ year}} Olympics: {{ male_mean.height__avg }}cm
+
+    {% else %}
+        
+        {% include "stats/error_year.html" %}
+
+    {% endif %}
+    
+    
+{% include "stats/footer.html" %}

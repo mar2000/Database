@@ -1,0 +1,27 @@
+{% include "stats/navbar.html" %}
+
+    
+    {% if res %}
+
+        Countries competing in {{ year }} Olympics ranked by number of representing athletes. <br><br>
+        <table>
+            <tr>
+                <th><div class="okienko">Name</div></th>
+                <th><div class="okienko">Number of participiants</div></th>
+            </tr>
+            {% for item in res %}
+                <tr>
+                    <td><div class="okienko">{{ item.country_code__country_name }}</div></td>
+                    <td><div class="okienko">{{ item.athlete_count }}</div></td>
+                </tr>
+            {% endfor %}
+        </table>
+
+    {% else %}
+        
+        {% include "stats/error_year.html" %}
+
+    {% endif %}
+    
+
+{% include "stats/footer.html" %}
